@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <MuiAppBar className="App-AppBar" elevation={0} position="fixed"  >
-          <Box sx={{ flex: 1 }} />
           <Typography
             variant="h6"
             underline="none"
