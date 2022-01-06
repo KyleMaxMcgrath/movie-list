@@ -3,6 +3,7 @@ import './App.css';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import MovieList from './MovieList';
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
           >
             {'Movie List'}
           </Typography>
+
       </MuiAppBar>
-      
+      <br/>
+      <br/>
+      <MovieList/>
     
     </div>
   );
