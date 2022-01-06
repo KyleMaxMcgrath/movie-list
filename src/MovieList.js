@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieDetails from './MovieDetails';
+import { v4 as uuid } from 'uuid';
 
 const columns = [
     { id: 'vote_count', label: 'Votes', minWidth: 30 },
@@ -113,25 +114,27 @@ const columns = [
                         {columns.map((column) => {
                         const value = row[column.id];
                         if(column.id === 'genre_ids') {
-                          return (<TableCell key={column.id} align={column.align}>
+                          return (<TableCell key={uuid()} align={column.align}>
                               {populateGenres(value)}
                           </TableCell>)
                         }
                         return (
-                            <TableCell key={column.id} align={column.align}>
+                            <TableCell key={uuid()} align={column.align}>
                             {column.format && typeof value === 'number'
                                 ? column.format(value)
                                 : value}
                             </TableCell>
                         );
                         })}
-                        <MovieDetails 
-                          id={row['id']}
-                          votes={row['vote_count']}
-                          title={row['title']}
-                          genres={populateGenres(row['genre_ids'])}
-                          release_date={row['release_date']}
-                        />
+                        <TableCell key={uuid()}>
+                          <MovieDetails 
+                            id={row['id']}
+                            votes={row['vote_count']}
+                            title={row['title']}
+                            genres={populateGenres(row['genre_ids'])}
+                            release_date={row['release_date']}
+                          />
+                        </TableCell>
                     </TableRow>
                     
                     );
