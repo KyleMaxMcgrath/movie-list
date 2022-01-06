@@ -22,6 +22,16 @@ function App() {
       </MuiAppBar>
       <br/>
       <br/>
+      <Box>
+        <Typography
+              variant="h7"
+              underline="none"
+              color="darkblue"
+              href="/"
+              sx={{ fontSize: 24 }}>
+                {'Popular Movies Today'}
+        </Typography>
+      </Box>
       <MovieList/>
     
     </div>
